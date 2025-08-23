@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bishal Gyawali - Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -296,6 +297,10 @@
             font-weight: 900;
             margin-bottom: 1rem;
             animation: slideUp 1s ease 0.3s both;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
@@ -435,6 +440,7 @@
             border-radius: 20px;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
+            position: relative;
         }
 
         .about-content::before {
@@ -578,6 +584,7 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid var(--border);
+            position: relative;
         }
 
         .skill-card::before {
@@ -692,6 +699,7 @@
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: all 0.6s ease;
+            z-index: 1;
         }
 
         .project-card:hover .project-image::before {
@@ -808,6 +816,7 @@
             display: flex;
             gap: 0.75rem;
             margin-top: auto;
+            flex-wrap: wrap;
         }
 
         .social-link {
@@ -821,11 +830,32 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .social-link:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px);
+        }
+
+        .social-link.facebook {
+            background: rgba(59, 89, 152, 0.8);
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-link.linkedin {
+            background: rgba(0, 119, 181, 0.8);
+        }
+
+        .social-link.github {
+            background: rgba(36, 41, 46, 0.8);
+        }
+
+        .social-link.email {
+            background: rgba(219, 68, 55, 0.8);
         }
 
         .contact-form {
@@ -923,6 +953,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        [data-theme="dark"] .copyright {
+            color: var(--text-secondary);
         }
 
         /* LOADING SCREEN */
@@ -1155,6 +1195,17 @@
             .contact-form {
                 padding: 2rem;
             }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1168,6 +1219,25 @@
 
             .nav-container {
                 padding: 0 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -1294,7 +1364,7 @@
                         <div class="skill-dot active"></div>
                         <div class="skill-dot active"></div>
                         <div class="skill-dot active"></div>
-                        <div class="skill-dot active"></div>
+                        <div class="skill-dot active</div>
                         <div class="skill-dot"></div>
                     </div>
                 </div>
@@ -1432,9 +1502,11 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-link" title="LinkedIn">💼</a>
-                        <a href="#" class="social-link" title="GitHub">🐱</a>
-                        <a href="#" class="social-link" title="Email">📧</a>
+                        <a href="https://www.facebook.com/bishal.gyawali.7902" class="social-link facebook" title="Facebook">f</a>
+                        <a href="https://www.instagram.com/bishal_o8/" class="social-link instagram" title="Instagram">📷</a>
+                        <a href="#" class="social-link linkedin" title="LinkedIn">in</a>
+                        <a href="#" class="social-link github" title="GitHub">🐱</a>
+                        <a href="mailto:bishal2gyawali@gmail.com" class="social-link email" title="Email">📧</a>
                     </div>
                 </div>
 
@@ -1472,8 +1544,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; Bishal Gyawali</p>
                 <p class="footer-cta">Feel free to connect or collaborate with me!</p>
+                <p class="copyright">&copy; 2023 Bishal Gyawali. All rights reserved.</p>
             </div>
         </div>
     </footer>
