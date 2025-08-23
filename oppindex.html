@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bishal Gyawali - Student Portfolio | Eager Learner from Gulmi, Nepal</title>
+    <meta name="description" content="Portfolio of Bishal Gyawali, a 17-year-old student from Gulmi, Nepal. SEE graduate (GPA 3.65) and +2 Science graduate (GPA 3.69). Eager learner and future innovator seeking opportunities in education and technology.">
+    <meta name="author" content="Bishal Gyawali">
+    <meta name="keywords" content="Bishal Gyawali, student portfolio, Gulmi Nepal, SEE graduate, science student, academic excellence, future innovator">
+    
+    <meta property="og:title" content="Bishal Gyawali - Student Portfolio | Eager Learner from Gulmi, Nepal">
+    <meta property="og:description" content="Portfolio of Bishal Gyawali, a 17-year-old student from Gulmi, Nepal. SEE graduate (GPA 3.65) and +2 Science graduate (GPA 3.69). Eager learner and future innovator.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* Nepal-inspired portfolio design system with modern gradients and animations */
+        :root {
+            /* Core colors inspired by Nepal's landscape and flag */
+            --background: hsl(220, 27%, 98%);
+            --foreground: hsl(215, 25%, 27%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(215, 25%, 27%);
+            
+            /* Nepal-inspired primary colors - deep blue from Himalayas */
+            --primary: hsl(218, 100%, 25%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --primary-light: hsl(218, 100%, 35%);
+            --primary-dark: hsl(218, 100%, 15%);
+            
+            /* Crimson accent inspired by Nepal flag */
+            --accent-nepal: hsl(0, 75%, 50%);
+            --accent-nepal-light: hsl(0, 75%, 60%);
+            
+            /* Secondary colors - mountain mist */
+            --secondary: hsl(217, 33%, 92%);
+            --secondary-foreground: hsl(215, 25%, 27%);
+            --muted: hsl(217, 33%, 92%);
+            --muted-foreground: hsl(215, 14%, 50%);
+            
+            --border: hsl(217, 33%, 88%);
+            --radius: 0.75rem;
+            
+            /* Portfolio-specific design tokens */
+            --hero-gradient: linear-gradient(135deg, hsl(218, 100%, 25%), hsl(260, 100%, 35%), hsl(0, 75%, 50%));
+            --card-gradient: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(217, 33%, 97%));
+            --skill-gradient: linear-gradient(90deg, hsl(218, 100%, 25%), hsl(260, 100%, 35%));
+            --glow-primary: 0 8px 32px hsl(218, 100%, 25%, 0.3);
+            --glow-accent: 0 8px 32px hsl(0, 75%, 50%, 0.2);
+            
+            /* Animation tokens */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .dark {
+            /* Dark mode with Nepal-inspired colors */
+            --background: hsl(215, 25%, 6%);
+            --foreground: hsl(217, 33%, 92%);
+            --card: hsl(215, 25%, 8%);
+            --card-foreground: hsl(217, 33%, 92%);
+            
+            --primary: hsl(218, 100%, 55%);
+            --primary-foreground: hsl(215, 25%, 6%);
+            --primary-light: hsl(218, 100%, 65%);
+            --primary-dark: hsl(218, 100%, 45%);
+            
+            --accent-nepal: hsl(0, 75%, 60%);
+            --accent-nepal-light: hsl(0, 75%, 70%);
+            
+            --secondary: hsl(215, 25%, 12%);
+            --secondary-foreground: hsl(217, 33%, 92%);
+            --muted: hsl(215, 25%, 12%);
+            --muted-foreground: hsl(215, 14%, 60%);
+            
+            --border: hsl(215, 25%, 18%);
+            
+            /* Dark mode portfolio tokens */
+            --hero-gradient: linear-gradient(135deg, hsl(218, 100%, 35%), hsl(260, 100%, 45%), hsl(0, 75%, 60%));
+            --card-gradient: linear-gradient(145deg, hsl(215, 25%, 8%), hsl(215, 25%, 12%));
+            --skill-gradient: linear-gradient(90deg, hsl(218, 100%, 45%), hsl(260, 100%, 55%));
+            --glow-primary: 0 8px 32px hsl(218, 100%, 35%, 0.4);
+            --glow-accent: 0 8px 32px hsl(0, 75%, 60%, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            transition: var(--transition-smooth);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Typography */
+        h1 { font-size: 3rem; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 2.5rem; font-weight: 700; line-height: 1.3; }
+        h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.4; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.2rem; }
+        }
+        
+        /* Components */
+        .card {
+            background: var(--card-gradient);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: var(--transition-smooth);
+        }
+        
+        .card:hover {
+            box-shadow: var(--glow-primary);
+            transform: translateY(-2px);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition-bounce);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glow-primary);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .badge-primary {
+            background: color-mix(in srgb, var(--primary) 10%, transparent);
+            color: var(--primary);
+        }
+        
+        /* Layout */
+        .hero-gradient { background: var(--hero-gradient); }
+        .card-gradient { background: var(--card-gradient); }
+        .skill-gradient { background: var(--skill-gradient); }
+        .glow-primary { box-shadow: var(--glow-primary); }
+        
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
+        
+        /* Section Styles */
+        section { padding: 5rem 0; }
+        .section-alt { background: color-mix(in srgb, var(--secondary) 30%, transparent); }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: color-mix(in srgb, var(--background) 90%, transparent);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--foreground);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            color: var(--foreground);
+            transition: var(--transition-smooth);
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        /* Skills without sliders */
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-icon-primary { background: var(--primary); color: var(--primary-foreground); }
+        .skill-icon-accent { background: var(--accent-nepal); color: var(--primary-foreground); }
+        .skill-icon-light { background: var(--primary-light); color: var(--primary-foreground); }
+        
+        /* Calculator Styles */
+        .calculator {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 1rem;
+            max-width: 300px;
+            margin: 0 auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .calc-display {
+            background: var(--secondary);
+            border: none;
+            border-radius: var(--radius);
+            padding: 1rem;
+            font-size: 1.5rem;
+            text-align: right;
+            width: 100%;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+        
+        .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .calc-btn {
+            padding: 1rem;
+            border: none;
+            border-radius: var(--radius);
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        
+        .calc-btn:hover {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+        
+        .calc-btn.operator {
+            background: var(--accent-nepal);
+            color: var(--primary-foreground);
+        }
+        
+        .calc-btn.equals {
+            background: var(--primary);
+            color: var(--primary-foreground);
+            grid-column: span 2;
+        }
+        
+        /* Project Images */
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--foreground);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--background);
+            color: var(--foreground);
+            transition: var(--transition-smooth);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent-nepal); }
+        .text-muted { color: var(--muted-foreground); }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-16 { margin-top: 4rem; }
+        .p-6 { padding: 1.5rem; }
+        .py-20 { padding: 5rem 0; }
+        .flex { display: flex; }
+        .flex-wrap { flex-wrap: wrap; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-4 { gap: 1rem; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <h3 class="text-primary">Bishal Gyawali</h3>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20" style="margin-top: 80px;">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="text-white mb-4 animate-fade-in-up">Bishal Gyawali</h1>
+                <p class="text-white text-xl mb-8">"Eager Learner and Future Innovator"</p>
+                <p class="text-white/90 text-lg mb-8 max-w-3xl mx-auto">
+                    Passionate student from Gulmi, Nepal, dedicated to academic excellence and innovation in science and technology
+                </p>
+                <a href="#about" class="btn btn-primary">Discover My Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="mb-4">About <span class="text-primary">Me</span></h2>
+                <p class="text-muted text-xl max-w-3xl mx-auto">
+                    Hello! I'm Bishal Gyawali, a passionate and dedicated student from Gulmi, Nepal. 
+                    I have recently completed my Secondary Education Examination (SEE) in 2079 BS with a GPA of 3.65 and further pursued my +2 education in the science stream, graduating with a GPA of 3.69. 
+                    I am keenly interested in expanding my knowledge, particularly in the fields of science and technology, and aspire to innovate and contribute meaningfully to my community and beyond.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 section-alt">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="mb-4">Educational <span class="text-primary">Journey</span></h2>
+                <p class="text-muted text-xl">Academic achievements and milestones</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <div class="skill-icon skill-icon-primary mb-4">
+                        <span style="font-size: 1.5rem;">📚</span>
+                    </div>
+                    <h3 class="mb-4">Secondary Education Examination (SEE)</h3>
+                    <p class="text-muted mb-4">2079 BS</p>
+                    <div class="badge badge-primary">GPA: 3.65</div>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon skill-icon-accent mb-4">
+                        <span style="font-size: 1.5rem;">🔬</span>
+                    </div>
+                    <h3 class="mb-4">+2 Science Stream</h3>
+                    <p class="text-muted mb-4">Recently Completed</p>
+                    <div class="badge badge-primary">GPA: 3.69</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="mb-4">Skills & <span class="text-primary">Abilities</span></h2>
+                <p class="text-muted text-xl">Core competencies and areas of expertise</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="skill-icon skill-icon-primary mb-4">
+                        <span style="font-size: 1.5rem;">💻</span>
+                    </div>
+                    <h3 class="mb-4">Programming Languages</h3>
+                    <div class="skill-item">
+                        <h4>Python</h4>
+                        <p class="text-muted">Object-oriented programming and data structures</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>HTML/CSS</h4>
+                        <p class="text-muted">Web development and responsive design</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>JavaScript</h4>
+                        <p class="text-muted">Basic programming and web interactivity</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon skill-icon-accent mb-4">
+                        <span style="font-size: 1.5rem;">📖</span>
+                    </div>
+                    <h3 class="mb-4">Scientific Knowledge</h3>
+                    <div class="skill-item">
+                        <h4>Mathematics</h4>
+                        <p class="text-muted">Advanced calculus, algebra, and statistics</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Physics</h4>
+                        <p class="text-muted">Mechanics, thermodynamics, and modern physics</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Chemistry</h4>
+                        <p class="text-muted">Organic, inorganic, and physical chemistry</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="skill-icon skill-icon-light mb-4">
+                        <span style="font-size: 1.5rem;">🧠</span>
+                    </div>
+                    <h3 class="mb-4">Core Abilities</h3>
+                    <div class="skill-item">
+                        <h4>Problem-Solving</h4>
+                        <p class="text-muted">Systematic approach to complex challenges</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Analytical Thinking</h4>
+                        <p class="text-muted">Breaking down problems into manageable parts</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Technical Skills</h4>
+                        <p class="text-muted">Working with various tools and technologies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 section-alt">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="mb-4">Projects & <span class="text-primary">Achievements</span></h2>
+                <p class="text-muted text-xl">Showcasing innovation and technical skills</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <!-- Calculator Project -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&q=80" alt="Calculator Project" class="project-image">
+                    <div class="badge badge-primary mb-4">Technology Project</div>
+                    <h3 class="mb-4">Interactive Calculator</h3>
+                    <p class="text-muted mb-4">
+                        Built a fully functional calculator using HTML, CSS, and JavaScript with modern design principles. 
+                        Features include basic arithmetic operations, memory functions, and responsive design for mobile devices.
+                    </p>
+                    
+                    <div class="calculator mb-4">
+                        <input type="text" id="calc-display" class="calc-display" readonly>
+                        <div class="calc-buttons">
+                            <button class="calc-btn" onclick="clearCalc()">C</button>
+                            <button class="calc-btn" onclick="deleteLast()">⌫</button>
+                            <button class="calc-btn operator" onclick="appendToDisplay('/')">/</button>
+                            <button class="calc-btn operator" onclick="appendToDisplay('*')">×</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('7')">7</button>
+                            <button class="calc-btn" onclick="appendToDisplay('8')">8</button>
+                            <button class="calc-btn" onclick="appendToDisplay('9')">9</button>
+                            <button class="calc-btn operator" onclick="appendToDisplay('-')">-</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('4')">4</button>
+                            <button class="calc-btn" onclick="appendToDisplay('5')">5</button>
+                            <button class="calc-btn" onclick="appendToDisplay('6')">6</button>
+                            <button class="calc-btn operator" onclick="appendToDisplay('+')">+</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('1')">1</button>
+                            <button class="calc-btn" onclick="appendToDisplay('2')">2</button>
+                            <button class="calc-btn" onclick="appendToDisplay('3')">3</button>
+                            <button class="calc-btn equals" onclick="calculateResult()" style="grid-row: span 2;">=</button>
+                            
+                            <button class="calc-btn" onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+                            <button class="calc-btn" onclick="appendToDisplay('.')">.</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Responsive Design</span>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a href="#" class="btn btn-outline">View Demo</a>
+                        <a href="#" class="btn btn-outline">GitHub</a>
+                    </div>
+                </div>
+                
+                <!-- Environmental Research Project -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=500&q=80" alt="Environmental Research" class="project-image">
+                    <div class="badge badge-primary mb-4">Academic Project</div>
+                    <h3 class="mb-4">Environmental Science Research</h3>
+                    <p class="text-muted mb-4">
+                        Conducted comprehensive research on local environmental issues in Gulmi district, focusing on sustainable solutions and community impact. 
+                        This project demonstrates analytical thinking and scientific methodology in addressing real-world challenges.
+                    </p>
+                    
+                    <h4 class="mb-2">Key Achievements:</h4>
+                    <ul class="text-muted mb-4" style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 0.5rem;">• Published in School Journal</li>
+                        <li style="margin-bottom: 0.5rem;">• First Place in Science Fair</li>
+                        <li style="margin-bottom: 0.5rem;">• Community Impact Recognition</li>
+                    </ul>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="badge">Research Methodology</span>
+                        <span class="badge">Data Analysis</span>
+                        <span class="badge">Scientific Writing</span>
+                        <span class="badge">Environmental Science</span>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                        <a href="#" class="btn btn-outline">Research Paper</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="card hero-gradient text-center mt-16">
+                <h3 class="text-white mb-4">Ready for New Challenges</h3>
+                <p class="text-white/90 text-lg mb-8 max-w-3xl mx-auto">
+                    I'm actively seeking opportunities to work on innovative projects, contribute to research initiatives, 
+                    and collaborate with like-minded individuals in academic and technological fields.
+                </p>
+                <a href="#contact" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3);">
+                    Let's Collaborate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="mb-4">Get In <span class="text-primary">Touch</span></h2>
+                <p class="text-muted text-xl">Ready to collaborate or discuss opportunities</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <h3 class="mb-4">Contact Information</h3>
+                    <div class="mb-4">
+                        <h4>Location</h4>
+                        <p class="text-muted">Gulmi, Nepal</p>
+                    </div>
+                    <div class="mb-4">
+                        <h4>Social Media</h4>
+                        <div class="flex gap-4 mt-2">
+                            <a href="#" class="btn btn-outline">LinkedIn</a>
+                            <a href="#" class="btn btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="mb-4">Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-input form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 hero-gradient">
+        <div class="container">
+            <div class="text-center">
+                <h3 class="text-white mb-4">© Bishal Gyawali</h3>
+                <p class="text-white/90 text-lg">Feel free to connect or collaborate with me!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            body.classList.toggle('dark');
+            
+            if (body.classList.contains('dark')) {
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark');
+                themeIcon.textContent = '☀️';
+            }
+        });
+
+        // Calculator Functionality
+        let currentInput = '';
+        let operator = '';
+        let firstOperand = '';
+
+        function appendToDisplay(value) {
+            const display = document.getElementById('calc-display');
+            if (display.value === '0' && value !== '.') {
+                display.value = value;
+            } else {
+                display.value += value;
+            }
+            currentInput = display.value;
+        }
+
+        function clearCalc() {
+            document.getElementById('calc-display').value = '';
+            currentInput = '';
+            operator = '';
+            firstOperand = '';
+        }
+
+        function deleteLast() {
+            const display = document.getElementById('calc-display');
+            display.value = display.value.slice(0, -1);
+            currentInput = display.value;
+        }
+
+        function calculateResult() {
+            const display = document.getElementById('calc-display');
+            try {
+                // Replace × with * for evaluation
+                const expression = display.value.replace(/×/g, '*');
+                const result = eval(expression);
+                display.value = result;
+                currentInput = result.toString();
+            } catch (error) {
+                display.value = 'Error';
+                setTimeout(() => {
+                    clearCalc();
+                }, 1500);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.card');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate-fade-in-up');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
